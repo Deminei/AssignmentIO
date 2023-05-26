@@ -31,6 +31,9 @@ public class IO {
             while ((line = reader.readLine()) != null) {
                 list.add(Integer.parseInt(line));
             }
+        } catch (FileNotFoundException e) {
+            System.out.println("The specified file does not exist.");
+            e.printStackTrace();
         } catch (IOException | NumberFormatException e) {
             System.out.println("An error occurred while reading the file or parsing the numbers.");
             e.printStackTrace();
@@ -48,6 +51,9 @@ public class IO {
                     writer.newLine();
                 }
             }
+        } catch (FileNotFoundException e) {
+            System.out.println("The specified file does not exist.");
+            e.printStackTrace();
         } catch (IOException e) {
             System.out.println("An error occurred while writing to the file.");
             e.printStackTrace();
